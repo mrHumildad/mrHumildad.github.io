@@ -1,14 +1,383 @@
 <!doctype html>
-   <html lang="en">
-   <head>
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width,initial-scale=1">
-     <title>Retro Soccer Dealer</title>
-   </head>
-   <body style="font-family:system-ui;max-width:38rem;margin:3rem auto;padding:0 1rem;line-height:1.5">
-     <h1>Retro Soccer Dealer</h1>
-     <p>A retro football tycoon for Android.</p>
-     <p><a href="https://play.google.com/store/apps/details?id=com.mrhumildad.retrosoccerdealer">Get it on Google Play</a></p>
-     <p><a href="privacy.html">Privacy policy</a> · <a href="app-ads.txt">app-ads.txt</a></p>
-   </body>
-   </html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maximilien Notaro — mrHumildad · developer portfolio</title>
+  <meta name="description" data-i18n-content="meta.description" content="Maximilien Notaro (mrHumildad), full-stack developer in Barcelona. Retro Soccer Dealer, RIOTSRADIOS, meteoCeps, Zodiac Soccer and PlantaVibras — five of 43 public repositories.">
+  <meta name="theme-color" content="#080a07">
+  <meta name="color-scheme" content="dark light">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Maximilien Notaro — mrHumildad">
+  <meta property="og:description" content="Full-stack developer in Barcelona. Five selected builds, 43 public repositories, one robot that counts the commits.">
+  <meta property="og:url" content="https://mrhumildad.github.io/">
+  <meta property="og:image" content="https://mrhumildad.github.io/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Maximilien Notaro — mrHumildad, developer portfolio">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Maximilien Notaro",
+    "alternateName": "mrHumildad",
+    "url": "https://mrhumildad.github.io/",
+    "jobTitle": "Full-stack developer",
+    "description": "Full-stack developer and creative technologist based in Barcelona.",
+    "address": { "@type": "PostalAddress", "addressLocality": "Barcelona", "addressCountry": "ES" },
+    "knowsLanguage": ["it", "fr", "es", "en", "ca"],
+    "sameAs": [
+      "https://github.com/mrHumildad",
+      "https://www.linkedin.com/in/maximilien-notaro-486aa7346/"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <b>mrHumildad</b>
+        <span>~/portfolio</span>
+      </a>
+      <span class="spacer"></span>
+      <button class="icon-btn" id="lang-toggle" type="button" aria-label="Switch language to Spanish">ES</button>
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to light theme">
+        <span class="icon-sun" aria-hidden="true">☀</span>
+        <span class="icon-moon" aria-hidden="true">☾</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <span id="top"></span>
+
+    <!-- ============================== HERO ============================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div>
+            <p class="kicker" data-i18n="hero.kicker">SYSTEM PROFILE · 2026</p>
+            <h1 id="hero-title">
+              Maximilien Notaro
+              <span data-i18n="hero.handle">Barcelona · @mrHumildad</span>
+            </h1>
+            <p class="roles" data-i18n="hero.roles">Full-stack developer · Creative technologist · Occasional videomaker</p>
+            <p class="contract" data-i18n="hero.status">Status: open to work, on-site or remote. Compiles on the first try (usually).</p>
+
+            <div class="cta-row">
+              <a class="btn btn-primary" href="https://github.com/mrHumildad" data-i18n="hero.cta.github">GitHub</a>
+              <a class="btn" href="https://play.google.com/store/apps/details?id=com.mrhumildad.retrosoccerdealer" data-i18n="hero.cta.play">Google Play</a>
+              <a class="btn" href="https://www.linkedin.com/in/maximilien-notaro-486aa7346/" data-i18n="hero.cta.linkedin">LinkedIn</a>
+              <a class="btn" href="mailto:notaromaximilien@gmail.com" data-i18n="hero.cta.email">Email</a>
+            </div>
+          </div>
+
+          <div class="terminal-card" id="terminal">
+            <div class="term-bar" aria-hidden="true">
+              <span></span><span></span><span></span>
+              <em>mrh@portfolio: ~</em>
+            </div>
+            <div class="term-body">
+              <p class="term-line"><span class="term-prompt">~/portfolio $</span> whoami</p>
+              <p class="term-out">Maximilien Notaro</p>
+              <p class="term-line"><span class="term-prompt">~/portfolio $</span> ls projects/</p>
+              <p class="term-out">rsd&#9;radios&#9;meteo&#9;zodiac&#9;planta</p>
+              <p class="term-line"><span class="term-prompt">~/portfolio $</span> cat status.txt</p>
+              <p class="term-out">shipping since 2022 · 43 public repos</p>
+              <p class="term-line"><span class="term-prompt">~/portfolio $</span> <span class="term-cursor" aria-hidden="true"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ticker">
+        <div class="ticker-track">
+          <span data-i18n="hero.ticker">NOW BUILDING · Retro Soccer Dealer · RIOTSRADIOS · meteoCeps · Zodiac Soccer · PlantaVibras · 43 public repositories</span>
+          <span aria-hidden="true" data-i18n="hero.ticker">NOW BUILDING · Retro Soccer Dealer · RIOTSRADIOS · meteoCeps · Zodiac Soccer · PlantaVibras · 43 public repositories</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== BUILDS ============================ -->
+    <section id="builds" aria-labelledby="builds-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-i18n="builds.eyebrow">[01] BUILDS</p>
+          <h2 id="builds-title" data-i18n="builds.title">Selected builds</h2>
+          <p data-i18n="builds.sub">Five of 43 public repositories. The rest are on GitHub — some of them even compile.</p>
+        </div>
+
+        <div class="builds-grid">
+          <!-- Retro Soccer Dealer -->
+          <article class="card reveal">
+            <div class="card-shot">
+              <picture>
+                <source srcset="assets/img/rsd.avif" type="image/avif">
+                <img src="assets/img/rsd.webp" alt="Retro Soccer Dealer transfer market screen" width="560" height="1120" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="card-body">
+              <div class="card-top">
+                <span class="path">~/projects/retro-soccer-dealer</span>
+                <span class="chip is-live" data-i18n="card.rsd.status">LIVE · GOOGLE PLAY</span>
+              </div>
+              <h3>Retro Soccer Dealer</h3>
+              <p class="card-line" data-i18n="card.rsd.line">Time travel, transfer markets and zero servers.</p>
+              <p class="card-fact" data-i18n="card.rsd.fact">An offline-first Android game: monthly transfer markets, Play Billing and importable community datasets.</p>
+              <ul class="tags">
+                <li>React 19</li>
+                <li>Capacitor</li>
+                <li>Play Billing</li>
+              </ul>
+              <div class="card-actions">
+                <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.mrhumildad.retrosoccerdealer" data-i18n="card.rsd.play">Google Play</a>
+                <a class="btn" href="https://github.com/mrHumildad/rsd_dataset" data-i18n="card.rsd.datasets">Datasets</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- RIOTSRADIOS -->
+          <article class="card reveal">
+            <div class="card-shot">
+              <picture>
+                <source srcset="assets/img/radios.avif" type="image/avif">
+                <img src="assets/img/radios.webp" alt="RIOTSRADIOS player: amber CRT spectrum and community station list" width="560" height="1111" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="card-body">
+              <div class="card-top">
+                <span class="path">~/projects/riotsradios</span>
+                <span class="chip is-live" data-i18n="card.radios.status">LIVE · WEB + ANDROID</span>
+              </div>
+              <h3>RIOTSRADIOS</h3>
+              <p class="card-line" data-i18n="card.radios.line">30+ community stations. Amber CRT. Zero algorithm.</p>
+              <p class="card-fact" data-i18n="card.radios.fact">A tuner for independent, non-commercial radio worldwide: EPG guides, stream health checks and a TV-friendly D-pad layout.</p>
+              <ul class="tags">
+                <li>React 19</li>
+                <li>Vite</li>
+                <li>Web Audio</li>
+              </ul>
+              <div class="card-actions">
+                <a class="btn btn-primary" href="https://mrhumildad.github.io/riotsradios/" data-i18n="card.radios.play">Open player</a>
+                <a class="btn" href="https://github.com/mrHumildad/riotsradios" data-i18n="card.radios.source">Source</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- meteoCeps -->
+          <article class="card reveal">
+            <div class="card-shot is-art">
+              <picture>
+                <source srcset="assets/img/meteo.avif" type="image/avif">
+                <img src="assets/img/meteo.webp" alt="meteoCeps wordmark" width="700" height="239" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="card-body">
+              <div class="card-top">
+                <span class="path">~/projects/metoceps</span>
+                <span class="chip is-live" data-i18n="card.meteo.status">LIVE · BETA</span>
+              </div>
+              <h3>meteoCeps</h3>
+              <p class="card-line" data-i18n="card.meteo.line">A mushroom finder: the rain says when, the forest says where.</p>
+              <p class="card-fact" data-i18n="card.meteo.fact">Five Catalan species — rovellons, ceps, llenegues, múrgoles, rossinyols — scored from rain, temperature and tree host, over terrain, substrate and contour views.</p>
+              <ul class="tags">
+                <li>React</li>
+                <li>MapLibre</li>
+                <li>Python pipeline</li>
+              </ul>
+              <div class="card-actions">
+                <a class="btn btn-primary" href="https://mrhumildad.github.io/meteoscat/" data-i18n="card.meteo.play">Open map</a>
+                <a class="btn" href="https://github.com/mrHumildad/meteoscat" data-i18n="card.meteo.source">Source</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PlantaVibras -->
+          <article class="card reveal">
+            <div class="card-shot">
+              <img src="assets/img/planta.webp" data-still="assets/img/planta-still.webp" alt="Max, from the PlantaVibras collective, in a looping clip from plantavibras.com" width="480" height="480" loading="lazy" decoding="async">
+            </div>
+            <div class="card-body">
+              <div class="card-top">
+                <span class="path">~/projects/plantavibras</span>
+                <span class="chip is-collective" data-i18n="card.planta.status">COLLECTIVE</span>
+              </div>
+              <h3>PlantaVibras</h3>
+              <p class="card-line" data-i18n="card.planta.line">A distributed research group, tuning rooms to vibrational frequencies.</p>
+              <p class="card-fact" data-i18n="card.planta.fact">Sound-wave experiments, a live Schumann resonance stream and a web app that adapts frequencies to each visitor.</p>
+              <ul class="tags">
+                <li>Sound research</li>
+                <li>Live audio</li>
+                <li>Web app</li>
+              </ul>
+              <div class="card-actions">
+                <a class="btn btn-primary" href="https://www.plantavibras.com/" data-i18n="card.planta.play">Visit site</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Zodiac Soccer -->
+          <article class="card reveal">
+            <div class="card-shot">
+              <picture>
+                <source srcset="assets/img/zodiac.avif" type="image/avif">
+                <img src="assets/img/zodiac.webp" alt="Zodiac Soccer stadium beneath the twelve zodiac constellations" width="900" height="507" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="card-body">
+              <div class="card-top">
+                <span class="path">~/projects/zodiac-soccer</span>
+                <span class="chip is-draft" data-i18n="card.zodiac.status">DRAFT</span>
+              </div>
+              <h3>Zodiac Soccer</h3>
+              <p class="card-line" data-i18n="card.zodiac.line">Twelve teams, one for each sign.</p>
+              <p class="card-fact" data-i18n="card.zodiac.fact">A zodiac-themed fantasy league: fixtures, standings, a best-XI solver and a rating-to-goals engine.</p>
+              <ul class="tags">
+                <li>React 19</li>
+                <li>Vite</li>
+                <li>Node scrapers</li>
+              </ul>
+              <div class="card-actions">
+                <a class="btn btn-primary" href="https://mrhumildad.github.io/Zodiac-Soccer/" data-i18n="card.zodiac.play">Open draft</a>
+                <a class="btn" href="https://github.com/mrHumildad/Zodiac-Soccer" data-i18n="card.zodiac.source">Source</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="builds-more reveal">
+          <a class="btn" href="https://github.com/mrHumildad" data-i18n="builds.all">Browse all 43 repositories</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================= PROFILE ============================ -->
+    <section id="profile" aria-labelledby="bio-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-i18n="bio.eyebrow">[02] PROFILE</p>
+          <h2 id="bio-title" data-i18n="bio.title">The short version</h2>
+        </div>
+
+        <div class="bio-grid reveal">
+          <div class="bio-copy">
+            <p data-i18n="bio.p1">Born in Annecy, France — Italian-French by family, in Barcelona since 2006, long enough that the accent no longer gives me away.</p>
+            <p data-i18n="bio.p2">Cinematography in Bologna, a decade of GNU/Linux servers, then 42 Barcelona in my forties; now I build web apps and Android games the internet was missing, and the old servers are somehow still alive.</p>
+          </div>
+
+          <aside class="bio-cv" aria-labelledby="bio-cv-label">
+            <p class="bio-cv-label" id="bio-cv-label" data-i18n="bio.cv.label">// CURRICULUM VITAE</p>
+            <p class="bio-cv-warning">
+              <span class="bio-cv-icon" aria-hidden="true">⚠</span>
+              <span data-i18n="bio.cv.warning">There is also a formal CV. It was written in an era when I wasn't sure what I was capable of, so it may contain traces of fake news.</span>
+            </p>
+            <a class="bio-cv-link" href="https://mrhumildad.github.io/max_notaro/" data-i18n="bio.cv.link">Open it anyway</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ TELEMETRY =========================== -->
+    <section class="stats" id="telemetry" aria-labelledby="stats-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow" data-i18n="stats.eyebrow">[03] TELEMETRY</p>
+          <h2 id="stats-title" data-i18n="stats.title">Verified by a robot, every morning</h2>
+          <p data-i18n="stats.sub">Pulled from GitHub at 04:17 UTC. Numbers, not vibes.</p>
+        </div>
+
+        <div id="stats-live" hidden>
+        <div class="stat-grid reveal">
+          <div class="tile">
+            <span class="label" data-i18n="stats.repos">Public repositories</span>
+            <span class="value" id="stat-repos">—</span>
+          </div>
+          <div class="tile">
+            <span class="label" data-i18n="stats.stars">Stars</span>
+            <span class="value" id="stat-stars">—</span>
+          </div>
+          <div class="tile">
+            <span class="label" data-i18n="stats.followers">Followers</span>
+            <span class="value" id="stat-followers">—</span>
+          </div>
+          <div class="tile is-featured">
+            <span class="label" data-i18n="stats.commits">Contributions (12 months)</span>
+            <span class="value" id="stat-commits">—</span>
+          </div>
+          <div class="tile">
+            <span class="label" data-i18n="stats.streak">Longest streak</span>
+            <span class="value" id="stat-streak">—</span>
+          </div>
+        </div>
+
+        <div class="stats-lower reveal">
+          <div class="contrib-card">
+            <h3 data-i18n="stats.contrib.title">Last 12 months</h3>
+            <div id="contrib"></div>
+            <div class="contrib-foot">
+              <span id="contrib-total">Total —</span>
+              <span id="stats-updated">Updated —</span>
+            </div>
+          </div>
+          <div class="langs-card">
+            <h3 data-i18n="stats.langs">Top languages</h3>
+            <div class="langs" id="langs"></div>
+          </div>
+        </div>
+
+        </div>
+
+        <figure class="stats-fallback" id="stats-fallback">
+          <img src="assets/img/stats-fallback.png" alt="Static snapshot of GitHub telemetry: public repositories, stars, followers, contributions, longest streak and top languages." width="1160" height="470" loading="lazy" decoding="async">
+          <figcaption>
+            <span data-i18n="stats.fallback">Static snapshot, shown when the live stats call fails.</span>
+            <a href="https://github.com/mrHumildad" data-i18n="stats.fallback.link">Live numbers on GitHub</a>
+          </figcaption>
+        </figure>
+
+        <p class="stats-note" id="stats-note" hidden data-i18n="stats.note">Generated daily by a GitHub Action. If this block looks empty, the bot is off duty.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== FOOTER ============================= -->
+  <footer class="footer-wrap">
+    <div class="wrap">
+      <div class="log-card reveal">
+        <div class="log-head" aria-hidden="true">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <em>mrh@portfolio: ~ — tail -f session.log</em>
+        </div>
+        <pre class="log-body">[<span id="visit-date">—</span>] session #<span id="visit-number">1</span>
+cookies=0  trackers=0  analytics=0
+stack=html+css+js  framework=none  build=push
+<span class="log-prompt">~/portfolio $</span> <span class="term-cursor" aria-hidden="true"></span></pre>
+      </div>
+
+      <div class="site-foot">
+        <nav aria-label="Legal, source and settings">
+          <a href="https://mrhumildad.github.io/rsd_dataset/privacy.html" data-i18n="legal.rsd">RSD privacy</a>
+          <a href="https://mrhumildad.github.io/riotsradios/privacy.html" data-i18n="legal.radios">RIOTSRADIOS privacy</a>
+          <a href="app-ads.txt" data-i18n="legal.appads">app-ads.txt</a>
+          <a href="https://github.com/mrHumildad/mrHumildad.github.io" data-i18n="legal.source">Page source</a>
+          <button id="sound-toggle" type="button" aria-pressed="false">♪ Sound off</button>
+        </nav>
+        <p data-i18n="footer.built">Hand-written HTML, CSS and JS. No framework, no build step, 80 KB and bad decisions.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

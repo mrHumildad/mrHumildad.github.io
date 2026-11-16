@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#0b0f07"/>
+  <path d="M32 8 54 15v17c0 14-9 21-22 25C19 53 10 46 10 32V15Z" fill="#11150d" stroke="#c9f24a" stroke-width="2"/>
+  <text x="32" y="40" text-anchor="middle" font-family="monospace" font-size="19" font-weight="700" fill="#c9f24a">MH</text>
+</svg>
