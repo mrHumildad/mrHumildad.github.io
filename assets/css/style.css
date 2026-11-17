@@ -235,6 +235,11 @@ ul, ol { padding: 0; list-style: none; }
   .hero-grid { grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); }
 }
 
+/* Phones held upright have no room for the decorative terminal. */
+@media (max-width: 767px) and (orientation: portrait) {
+  .terminal-card { display: none; }
+}
+
 .kicker {
   font-family: var(--font-mono);
   font-size: .72rem;
@@ -407,7 +412,7 @@ ul, ol { padding: 0; list-style: none; }
   display: flex;
   width: max-content;
   gap: 2.5rem;
-  animation: ticker 46s linear infinite;
+  animation: ticker 170s linear infinite;
 }
 
 .ticker-track span {
@@ -734,6 +739,7 @@ section { padding-block: clamp(46px, 7vw, 78px); }
   filter: none;
 }
 
+
 .card-body {
   padding: clamp(16px, 2.2vw, 22px);
   display: flex;
@@ -936,6 +942,101 @@ section { padding-block: clamp(46px, 7vw, 78px); }
 }
 
 
+/* --- llm notice ---------------------------------------------------------- */
+.llm-note {
+  margin-top: clamp(26px, 4vw, 42px);
+  padding-inline: var(--gutter);
+  display: flex;
+  justify-content: center;
+}
+
+.llm-crt {
+  display: block;
+  width: min(620px, 100%);
+  padding: 3px;
+  border-radius: 15px;
+  background: linear-gradient(160deg, var(--line-strong), var(--panel));
+  box-shadow: var(--hard);
+  color: var(--chalk);
+  text-decoration: none;
+  transform: rotate(.35deg);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.llm-crt:hover,
+.llm-crt:focus-visible {
+  transform: rotate(0) translateY(-2px);
+  box-shadow: var(--hard), 0 0 26px rgba(201, 242, 74, .22);
+}
+
+.llm-screen {
+  position: relative;
+  display: grid;
+  gap: 7px;
+  padding: 15px 18px 17px;
+  border-radius: 12px;
+  background: radial-gradient(130% 140% at 18% 0%, #14240f, #060a04 72%);
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  line-height: 1.65;
+  letter-spacing: .02em;
+  overflow: hidden;
+}
+
+/* scanlines, purely decorative */
+.llm-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, .32) 0 1px, transparent 1px 3px);
+  opacity: .55;
+}
+
+.llm-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  margin-bottom: 2px;
+}
+
+.llm-top b {
+  color: #c9f24a;
+  font-size: .62rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(201, 242, 74, .55);
+}
+
+.llm-top i {
+  margin-left: auto;
+  color: #7f9469;
+  font-style: normal;
+  font-size: .58rem;
+  letter-spacing: .08em;
+  white-space: nowrap;
+}
+
+.llm-line {
+  display: block;
+  color: #cfe0b8;
+}
+
+.llm-line.is-strong {
+  margin-top: 6px;
+  color: #ffb648;
+  font-size: .72rem;
+}
+
+.llm-meta {
+  margin-top: 3px;
+  color: #6f8560;
+  font-size: .58rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
 /* --- footer log --------------------------------------------------------- */
 .footer-wrap { padding-bottom: clamp(40px, 6vw, 70px); }
 
@@ -1056,5 +1157,6 @@ section { padding-block: clamp(46px, 7vw, 78px); }
   .js .reveal { opacity: 1; transform: none; }
   .ticker-track { animation: none; }
   .terminal-card { transform: none; }
+  .llm-crt { transform: none; }
   .term-cursor { animation: none; opacity: 1; }
 }

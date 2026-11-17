@@ -294,21 +294,53 @@
     if (totalEl) totalEl.textContent = "";
   }
 
+  // Average contributions per day over the last `window` days. Day dates come
+  // from the calendar start plus the flat cell index, so the trailing future
+  // cells of the current week are skipped rather than counted as zero.
+  function dailyAverage(stats, window = 30) {
+    const cal = stats.contributions;
+    if (!cal || !Array.isArray(cal.weeks) || !cal.start) return null;
+    const start = Date.parse(cal.start + "T00:00:00Z");
+    if (!Number.isFinite(start)) return null;
+
+    const now = Date.now();
+    let counted = 0;
+    cal.weeks.flat().forEach((count, i) => {
+      const at = start + i * 86400000;
+      if (at > now || at <= now - window * 86400000) return;
+      counted += count;
+    });
+    return counted / window;
+  }
+
   function renderStats(stats) {
     lastStats = stats;
     const haveContrib = stats.contributions && Array.isArray(stats.contributions.weeks);
     const total = haveContrib ? stats.contributions.total || 0 : null;
 
     setTile("stat-repos", nf().format(stats.public_repos || 0));
-    setTile("stat-stars", nf().format(stats.stars || 0));
-    setTile("stat-followers", nf().format(stats.followers || 0));
-    setTile("stat-commits", total === null ? unavailable() : nf().format(total), total === null);
+    const perDay = dailyAverage(stats);
     setTile(
-      "stat-streak",
-      stats.longest_streak && stats.longest_streak.days
-        ? (t("stats.days") || "{n} d").replace("{n}", nf().format(stats.longest_streak.days))
+      "stat-recent",
+      perDay === null
+        ? unavailable()
+        : (t("stats.perDay") || "{n} / day").replace(
+            "{n}",
+            new Intl.NumberFormat(locale(), {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2
+            }).format(perDay)
+          ),
+      perDay === null
+    );
+    setTile("stat-commits", total === null ? unavailable() : nf().format(total), total === null);
+    const joined = Date.parse(stats.account_created || "");
+    setTile(
+      "stat-days",
+      Number.isFinite(joined)
+        ? nf().format(Math.floor((Date.now() - joined) / 86400000))
         : unavailable(),
-      !stats.longest_streak || !stats.longest_streak.days
+      !Number.isFinite(joined)
     );
 
     renderLanguages(stats.top_languages);
@@ -344,15 +376,22 @@
   async function loadStats() {
     const note = document.getElementById("stats-note");
     try {
-      const res = await fetch("stats.json", { cache: "no-store" });
-      if (!res.ok) throw new Error("HTTP " + res.status);
-      renderStats(await res.json());
+      // stats.js ships the same payload through a <script>, because fetch() of a
+      // local file is blocked, so the block would stay empty when index.html is
+      // opened straight from disk.
+      let stats = window.MH_STATS;
+      if (!stats) {
+        const res = await fetch("stats.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        stats = await res.json();
+      }
+      renderStats(stats);
       showLiveStats();
       if (note) note.hidden = true;
     } catch (err) {
       console.warn("[stats]", err);
       // Keep the static snapshot visible; it is already in the document.
-      ["stat-commits", "stat-streak"].forEach((id) => setTile(id, unavailable(), true));
+      ["stat-recent", "stat-commits", "stat-days"].forEach((id) => setTile(id, unavailable(), true));
       if (note) note.hidden = false;
     }
   }

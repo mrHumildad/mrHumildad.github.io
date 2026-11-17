@@ -14,10 +14,12 @@ bottom that refreshes daily.
 | `assets/js/main.js` | Language toggle, stats rendering, theme, receipt counter, two easter eggs. |
 | `assets/i18n/es.js` | Spanish copy, keyed by the `data-i18n` attributes in `index.html`. Loaded as a script, so the toggle also works from `file://`. |
 | `assets/img/` | Screenshots, logos, OG image and favicon. |
-| `stats.json` | Generated daily — **do not edit by hand**. |
+| `llm.md` | Markdown summary of the page for LLMs and scrapers, linked by the CRT banner under the hero. Update it when a project or the numbers change. |
+| `stats.json` | Generated daily — **do not edit by hand**. Machine-readable copy, also read by the fallback image script. |
+| `assets/js/stats.js` | The same payload as `stats.json`, wrapped in `window.MH_STATS` and loaded with a `<script>`, so the telemetry block also renders from `file://`. Generated daily too. |
 | `scripts/fetch-stats.mjs` | Stats generator (REST API + GitHub's public contribution calendar). |
 | `scripts/render-stats-fallback.py` | Renders `assets/img/stats-fallback.png`, the static snapshot shown when the live stats call fails. Needs Pillow. |
-| `.github/workflows/stats.yml` | Runs the generator every morning and commits `stats.json` when it changed. |
+| `.github/workflows/stats.yml` | Runs the generator every morning and commits `stats.json`, `assets/js/stats.js` and the fallback image when they changed. |
 | `app-ads.txt` | AdMob verification for the Android apps. **Must stay at the domain root, unchanged and byte-identical.** |
 
 ## Editing copy
@@ -51,7 +53,9 @@ the Action's bot token cannot read a personal GraphQL contributions collection.
 
 If the calendar cannot be read, `stats.json` is still written with the repo
 totals and the page shows a "calendar pending" line instead of an empty grid.
-The page reads `stats.json` same-origin.
+The page reads `assets/js/stats.js` (`window.MH_STATS`), falling back to a
+`stats.json` fetch if that script is missing — a local file `fetch()` fails, a
+`<script>` does not.
 
 ## Preview
 

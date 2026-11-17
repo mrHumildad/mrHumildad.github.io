@@ -59,6 +59,36 @@ def compact(n):
     return f"{n:,}"
 
 
+def days_since(iso):
+    try:
+        from datetime import datetime, timezone
+
+        start = datetime.fromisoformat(iso.replace("Z", "+00:00"))
+        return max(0, (datetime.now(timezone.utc) - start).days)
+    except Exception:
+        return None
+
+
+def daily_average(stats, window=30):
+    cal = stats.get("contributions") or {}
+    weeks = cal.get("weeks") or []
+    try:
+        from datetime import datetime, timedelta, timezone
+
+        start = datetime.fromisoformat((cal.get("start") or "") + "T00:00:00+00:00")
+    except Exception:
+        return None
+
+    now = datetime.now(timezone.utc)
+    counted = 0
+    for index, count in enumerate([n for week in weeks for n in week]):
+        day = start + timedelta(days=index)
+        if day > now or day <= now - timedelta(days=window):
+            continue
+        counted += count
+    return counted / window
+
+
 def stamp(iso):
     try:
         from datetime import datetime
@@ -77,7 +107,8 @@ def main():
     contributions = stats.get("contributions") or {}
     weeks = contributions.get("weeks") or []
     total = contributions.get("total")
-    streak = (stats.get("longest_streak") or {}).get("days")
+    since = days_since(stats.get("account_created") or "")
+    average = daily_average(stats)
     languages = stats.get("top_languages") or []
     rendered = stamp(stats.get("generated_at", ""))
 
@@ -106,10 +137,10 @@ def main():
     # stat tiles
     tiles = [
         ("PUBLIC REPOSITORIES", compact(stats.get("public_repos", 0))),
-        ("STARS", compact(stats.get("stars", 0))),
-        ("FOLLOWERS", compact(stats.get("followers", 0))),
+        ("PRIVATE REPOSITORIES", "?"),
+        ("LAST MONTH CONTRIBUTIONS", f"{average:.2f} / day" if average is not None else "n/a"),
         ("CONTRIBUTIONS (12 MO)", compact(total) if total is not None else "n/a"),
-        ("LONGEST STREAK", f"{streak} d" if streak else "n/a"),
+        ("DAYS SINCE FIRST LOGIN", compact(since) if since is not None else "n/a"),
     ]
 
     gap = 12
