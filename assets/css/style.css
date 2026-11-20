@@ -273,35 +273,6 @@ ul, ol { padding: 0; list-style: none; }
   margin-top: 14px;
 }
 
-/* Name / alias cross-fade: each word holds 5s, ~1s of soft swap between. */
-.hero-swap { display: grid; }
-
-.hero-swap > span { grid-area: 1 / 1; }
-
-.hero-name { animation: heroSwapName 10s ease-in-out infinite; }
-
-.hero-alias {
-  align-self: center;
-  animation: heroSwapAlias 10s ease-in-out infinite;
-}
-
-@keyframes heroSwapName {
-  0%, 40%  { opacity: 1; transform: translateY(0); }
-  50%, 90% { opacity: 0; transform: translateY(-.12em); }
-  100%     { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes heroSwapAlias {
-  0%, 40%  { opacity: 0; transform: translateY(.12em); }
-  50%, 90% { opacity: 1; transform: translateY(0); }
-  100%     { opacity: 0; transform: translateY(.12em); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-name { animation: none; }
-  .hero-alias { display: none; }
-}
-
 .roles {
   margin-top: 18px;
   max-width: 42ch;
