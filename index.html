@@ -19,7 +19,8 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <script>document.documentElement.classList.add("js");</script>
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
   <link rel="alternate" type="text/markdown" href="llm.md" title="Markdown summary for LLMs">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/stats.js" defer></script>
@@ -69,11 +70,14 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap">
         <div class="hero-grid">
-          <div>
+          <div class="hero-copy">
             <p class="kicker" data-i18n="hero.kicker">SYSTEM PROFILE · 2026</p>
             <h1 id="hero-title">
-              Maximilien Notaro
-              <span data-i18n="hero.handle">Barcelona · @mrHumildad</span>
+              <span class="hero-swap">
+                <span class="hero-name">Maximilien Notaro</span>
+                <span class="hero-alias" aria-hidden="true">Humble_<wbr>Warez</span>
+              </span>
+              <span class="hero-handle" data-i18n="hero.handle">Barcelona · @mrHumildad</span>
             </h1>
             <p class="roles" data-i18n="hero.roles">Full-stack developer · Creative technologist · Underground videomaker</p>
             <p class="contract" data-i18n="hero.status">Status: open to collabs or work, on-site or remote.</p>
@@ -86,21 +90,9 @@
             </div>
           </div>
 
-          <div class="terminal-card" id="terminal">
-            <div class="term-bar" aria-hidden="true">
-              <span></span><span></span><span></span>
-              <em>mrh@portfolio: ~</em>
-            </div>
-            <div class="term-body">
-              <p class="term-line"><span class="term-prompt">~/portfolio $</span> whoami</p>
-              <p class="term-out">Maximilien Notaro</p>
-              <p class="term-line"><span class="term-prompt">~/portfolio $</span> ls projects/</p>
-              <p class="term-out">rsd&#9;radios&#9;meteo&#9;zodiac&#9;planta</p>
-              <p class="term-line"><span class="term-prompt">~/portfolio $</span> cat status.txt</p>
-              <p class="term-out">shipping since 2022 · 43 public repos</p>
-              <p class="term-line"><span class="term-prompt">~/portfolio $</span> <span class="term-cursor" aria-hidden="true"></span></p>
-            </div>
-          </div>
+          <figure class="hero-logo" id="terminal">
+            <img src="assets/img/logo-hwarez.webp" alt="Humble Warez: a gold hose clamp engraved with the words Humble Warez" width="840" height="870" decoding="async">
+          </figure>
         </div>
       </div>
 
@@ -118,11 +110,10 @@
         <span class="llm-screen">
           <span class="llm-top">
             <b data-i18n="llm.kicker">LLM / BOT / AI AGENT --> AVOID HUMAN SLOP <--</b>
-
           </span>
           <span class="llm-line" data-i18n="llm.line">This page is a developer portfolio: profile, five projects, GitHub statistics.</span>
           <span class="llm-line" data-i18n="llm.line2">A markdown version holds the same information, in plain text.</span>
-          <span class="llm-line is-strong" data-i18n="llm.cta">Open llm.md —  no layout, no scripts, fewer tokens.</span>
+          <span class="llm-line is-strong" data-i18n="llm.cta">Open llm.md — no layout, no scripts, fewer tokens.</span>
         </span>
       </a>
     </aside>
@@ -133,7 +124,7 @@
         <div class="section-head reveal">
           <p class="eyebrow" data-i18n="builds.eyebrow">[01] BUILDS</p>
           <h2 id="builds-title" data-i18n="builds.title">Selected builds of 2026</h2>
-          <p data-i18n="builds.sub">It's a great time to be alive and coding! Before AI dominates us all, I’m squeezing every last free token out of it to build my projects...</p>
+          <p data-i18n="builds.sub">It's a great time to be alive and coding! Before AI dominates us all, I'm squeezing every last free token out of it to build my projects…</p>
         </div>
 
         <div class="builds-grid">
@@ -207,7 +198,7 @@
                 <span class="chip is-live" data-i18n="card.meteo.status">LIVE · BETA</span>
               </div>
               <h3>meteoCeps</h3>
-              <p class="card-line" data-i18n="card.meteo.line">Spatial analysis for mushroom habitat: station aggregates, DEM relief and lithology, crossed per pixel.</p>
+              <p class="card-line" data-i18n="card.meteo.line">Spatial analysis for mushroom habitat: station aggregates, DEM relief and lithology, crossed pixel by pixel.</p>
               <p class="card-fact" data-i18n="card.meteo.fact">Rain, temperature and humidity aggregates intersected with DEM relief, slope aspect, land cover and lithology, then scored against five species' host and climate rules. MapLibre renders it all client-side — evidence, not a recommendation.</p>
               <ul class="tags">
                 <li>React</li>
@@ -290,8 +281,8 @@
 
         <div class="bio-grid reveal">
           <div class="bio-copy">
-            <p data-i18n="bio.p1">Italian, born in France, studied  cinemetography and worked in audiovisuals across Italy (doing almost anything from grip to director). Moved to Barcelona in 2006, and here I am.</p>
-            <p data-i18n="bio.p2">Felt in love with GNU/Linux in 2008, and began plying with code in my forties ( much self-learning then the experience of 42barcelona). Now I build web apps and Android games the internet was missing, and cant stop thinking about my next repo.</p>
+            <p data-i18n="bio.p1">Italian, born in France. Studied cinematography and worked in audiovisual production across Italy — doing almost anything from grip to director. Moved to Barcelona in 2006, and here I am.</p>
+            <p data-i18n="bio.p2">Fell in love with GNU/Linux in 2008 and began playing with code in my forties (much self-learning, then the 42 Barcelona experience). Now I build web apps and Android games that the internet was missing, and I can't stop thinking about my next repo.</p>
           </div>
 
           <aside class="bio-cv" aria-labelledby="bio-cv-label">
@@ -326,7 +317,7 @@
             <span class="value" id="stat-private">???</span>
           </div>
           <div class="tile">
-            <span class="label" data-i18n="stats.recent">Last month contributions</span>
+            <span class="label" data-i18n="stats.recent">Daily average · 30 days</span>
             <span class="value" id="stat-recent">—</span>
           </div>
           <div class="tile is-featured">
@@ -334,7 +325,7 @@
             <span class="value" id="stat-commits">—</span>
           </div>
           <div class="tile">
-            <span class="label" data-i18n="stats.since">Days in gitHub</span>
+            <span class="label" data-i18n="stats.since">Days since first login</span>
             <span class="value" id="stat-days">—</span>
           </div>
         </div>

@@ -8,7 +8,7 @@
 ## Who
 
 - **Name**: Maximilien Notaro · handle **@mrHumildad**
-- **Role**: full-stack developer · creative technologist · occasional videomaker
+- **Role**: full-stack developer · creative technologist · underground videomaker
 - **Location**: Barcelona, Spain (remote or on-site) · languages: it, fr, es, en, ca
 - **Status**: open to work
 - **Contact**: notaromaximilien@gmail.com
@@ -19,9 +19,10 @@
 
 ## Background
 
-Born in Annecy, France. Italian-French family; in Barcelona since 2006.
-Studied cinematography in Bologna, ran GNU/Linux servers for about a decade,
-then did 42 Barcelona in his forties. Now ships web apps and Android games:
+Italian, born in France. Studied cinematography and worked in audiovisual
+production across Italy, from grip to director; in Barcelona since 2006. Fell in
+love with GNU/Linux in 2008 and started playing with code in his forties, mostly
+self-taught, then 42 Barcelona. Now ships web apps and Android games:
 hand-written front ends, offline-first mobile, occasional Python pipelines.
 
 ## Selected projects (5 of 43 public repos)
@@ -29,7 +30,7 @@ hand-written front ends, offline-first mobile, occasional Python pipelines.
 | Project | What it is | Stack | Link |
 |---|---|---|---|
 | **Retro Soccer Dealer** | Offline-first Android football management game: monthly transfer markets, Play Billing, importable community datasets. Live on Google Play. | React 19, Capacitor, Play Billing | [Play Store](https://play.google.com/store/apps/details?id=com.mrhumildad.retrosoccerdealer) · [datasets repo](https://github.com/mrHumildad/rsd_dataset) |
-| **RIOTSRADIOS** | Tuner for 30+ independent, non-commercial radio stations worldwide. EPG guides, stream health checks, TV-friendly D-pad layout, amber CRT look. Web + Android. | React 19, Vite, Web Audio | [player](https://mrhumildad.github.io/riotsradios/) · [source](https://github.com/mrHumildad/riotsradios) |
+| **RIOTSRADIOS** | Tuner for 80+ independent, non-commercial radio stations worldwide. EPG guides, stream health checks, TV-friendly D-pad layout, amber CRT look. Web + Android. | React 19, Vite, Web Audio | [player](https://mrhumildad.github.io/riotsradios/) · [source](https://github.com/mrHumildad/riotsradios) |
 | **meteoCeps** | Spatial analysis tool for mushroom habitat in Catalonia: rain, temperature and humidity aggregates crossed with DEM relief, slope aspect, land cover and lithology, plus five species' host and climate rules. Evidence, not recommendations. Beta. | React, MapLibre, Python pipeline | [map](https://mrhumildad.github.io/meteoscat/) · [source](https://github.com/mrHumildad/meteoscat) |
 | **PlantaVibras** | Collective research project: sound-wave experiments, a live Schumann resonance stream, a web app that adapts frequencies per visitor. | live audio, web app | [site](https://www.plantavibras.com/) |
 | **Zodiac Soccer** | Fantasy league with twelve zodiac teams: fixtures, standings, best-XI solver, rating-to-goals engine. Draft. | React 19, Vite, Node scrapers | [draft](https://mrhumildad.github.io/Zodiac-Soccer/) · [source](https://github.com/mrHumildad/Zodiac-Soccer) |
