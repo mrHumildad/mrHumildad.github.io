@@ -273,6 +273,36 @@ ul, ol { padding: 0; list-style: none; }
   margin-top: 14px;
 }
 
+/* Headline alternates between the two words of the name: each holds 5s. */
+.hero-swap { display: grid; }
+
+.hero-swap > .hero-word {
+  grid-area: 1 / 1;
+  justify-self: start;
+}
+
+.hero-word.is-first { animation: heroWordFirst 10s ease-in-out infinite; }
+
+.hero-word.is-last { animation: heroWordLast 10s ease-in-out infinite; }
+
+@keyframes heroWordFirst {
+  0%, 40%  { opacity: 1; transform: translateY(0); }
+  50%, 90% { opacity: 0; transform: translateY(-.12em); }
+  100%     { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroWordLast {
+  0%, 40%  { opacity: 0; transform: translateY(.12em); }
+  50%, 90% { opacity: 1; transform: translateY(0); }
+  100%     { opacity: 0; transform: translateY(.12em); }
+}
+
+/* No motion: both words sit inline, reading as the full name. */
+@media (prefers-reduced-motion: reduce) {
+  .hero-swap { display: inline; }
+  .hero-swap > .hero-word { animation: none; }
+}
+
 .roles {
   margin-top: 18px;
   max-width: 42ch;
