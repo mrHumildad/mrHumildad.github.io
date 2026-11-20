@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-11-16T10:12:55.839Z",
+  "generated_at": "2026-11-20T12:50:08.148Z",
   "login": "mrHumildad",
   "account_created": "2022-01-15T12:16:57Z",
-  "public_repos": 43,
+  "public_repos": 44,
   "followers": 1,
   "stars": 10,
   "top_languages": [
     {
       "name": "JavaScript",
-      "pct": 54
+      "pct": 57
     },
     {
       "name": "HTML",
-      "pct": 23
+      "pct": 20
     },
     {
       "name": "C",
@@ -24,7 +24,7 @@
     }
   ],
   "contributions": {
-    "total": 314,
+    "total": 324,
     "start": "2025-11-16",
     "weeks": [
       [
@@ -497,15 +497,14 @@
       ],
       [
         2,
-        0,
-        0,
-        0,
-        0,
-        0,
+        2,
+        2,
+        1,
+        4,
+        1,
         0
       ]
     ]
   },
-
-  "source": "local"
+  "source": "github-actions"
 }
